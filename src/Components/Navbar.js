@@ -15,36 +15,36 @@ function Navbar(){
             <Link to="/" class="nav-link" >Home<span class="sr-only">(current)</span></Link>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="!#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Biblioteca
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <Link to="/addNewBiblioteca" class="dropdown-item" >Agregar biblioteca</Link>
-              <a class="dropdown-item" href="#">Editar biblioteca</a>
-              <a class="dropdown-item" href="#">Ver bibliotecas compartidas</a>
+              <a class="dropdown-item" href="!#">Editar biblioteca</a>
+              <a class="dropdown-item" href="!#">Ver bibliotecas compartidas</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Eliminar biblioteca</a>
+              <a class="dropdown-item" href="!#">Eliminar biblioteca</a>
             </div>
           </li>
           <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="!#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Contribuidores
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Agregar contribuidor a biblioteca</a>
+                <a class="dropdown-item" href="!#">Agregar contribuidor a biblioteca</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Eliminar contribuidor de biblioteca</a>
+                <a class="dropdown-item" href="!#">Eliminar contribuidor de biblioteca</a>
               </div>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="!#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Contactos
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Ingeniero y desarrollador Cristian papito Ruiz</a>
-                <a class="dropdown-item" href="#">Ingeniero y desarrollador Sebastian Medina</a>
+                <a class="dropdown-item" href="!#">Ingeniero y desarrollador Cristian papito Ruiz</a>
+                <a class="dropdown-item" href="!#">Ingeniero y desarrollador Sebastian Medina</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Ingeniero y desarrollador Juan Molina</a>
+                <a class="dropdown-item" href="!#">Ingeniero y desarrollador Juan Molina</a>
               </div>
             </li>  
         </ul>
