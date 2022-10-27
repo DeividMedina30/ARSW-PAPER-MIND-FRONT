@@ -1,0 +1,26 @@
+*{
+    font-family: sans-serif;
+}
+
+.containerLogin{
+    min-height: 100%;
+    align-items: center;
+    justify-content: center;
+    max-width: 40%;
+    margin-top: 8%;
+    margin-left: 30%;
+    margin-right: 30%;
+
+}
+
+.contenedorInterno{
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    background-color: rgb(214, 226, 253);
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(177, 177, 177);
+    border-radius: 20px;
+}

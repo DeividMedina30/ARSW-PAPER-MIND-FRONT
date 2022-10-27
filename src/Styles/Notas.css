@@ -1,0 +1,15 @@
+.col .mb-4{
+  width: 10px;
+  height: 200px;
+  }
+
+.card .card-text{
+  max-height: 300px;
+
+}
+
+.card-body{
+  border-radius: 50px;
+}
+
+
