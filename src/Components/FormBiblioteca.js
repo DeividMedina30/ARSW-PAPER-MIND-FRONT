@@ -23,7 +23,7 @@ function postForm(){
 			<Navbar/>
 			<div class="containerForm">
 				<h1>Ingrese los datos de la Biblioteca:</h1><br/>
-				<form class="was-validated" onSubmit={guardarDatos}>
+				<form class="was-validated">
 					<div class="form-group">
 						<label for="title-biblioteca">Título Biblioteca</label>
 						<input onChange={(e)=>handle(e)} value={data.titulo} name="titulo" type="text" class="form-control" id="titulo" placeholder="Ingrese un título" required/>
