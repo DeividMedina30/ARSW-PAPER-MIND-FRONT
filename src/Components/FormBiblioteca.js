@@ -17,9 +17,9 @@ function postForm(){
 		axios.post(
 			baseURL,
 			{
-				nombre: data.titulo,
-				fecha_creacion: data.fechaCreacion,
-				fecha_modificacion: data.fechaModificacion,
+				nombre: data.nombre,
+				fecha_creacion: data.fecha_creacion,
+				fecha_modificacion: data.fecha_modificacion,
 				descripcion: data.descripcion
 			}
 		)
