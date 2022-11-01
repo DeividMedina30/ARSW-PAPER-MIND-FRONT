@@ -26,7 +26,7 @@ function postForm(){
 				console.log(res.data)
 			})
 		)
-	}
+	};
 	function handle(e){
 		const newTitle={...data}
 		newTitle[e.target.id] = e.target.value
