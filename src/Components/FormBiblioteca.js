@@ -12,6 +12,21 @@ function postForm(){
 		fechaModificacion: "",
 		descripcion: ""
 	})
+	function submit(e){
+		e.preventDefault();
+		axios.post(
+			baseURL,
+			{
+				titulo: data.titulo,
+				fechaCreacion: data.fechaCreacion,
+				fechaModificacion: data.fechaModificacion,
+				descripcion: data.descripcion
+			}
+			.then(res=>{
+				console.log(res.data)
+			})
+		)
+	}
 	function handle(e){
 		const newTitle={...data}
 		newTitle[e.target.id] = e.target.value
@@ -23,7 +38,7 @@ function postForm(){
 			<Navbar/>
 			<div class="containerForm">
 				<h1>Ingrese los datos de la Biblioteca:</h1><br/>
-				<form class="was-validated">
+				<form class="was-validated" onSubmit={(e) => submit(e)}>
 					<div class="form-group">
 						<label for="title-biblioteca">Título Biblioteca</label>
 						<input onChange={(e)=>handle(e)} value={data.titulo} name="titulo" type="text" class="form-control" id="titulo" placeholder="Ingrese un título" required/>
