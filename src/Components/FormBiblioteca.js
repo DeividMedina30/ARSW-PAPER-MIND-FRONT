@@ -22,10 +22,10 @@ function postForm(){
 				fechaModificacion: data.fechaModificacion,
 				descripcion: data.descripcion
 			}
-			.then(res=>{
-				console.log(res.data)
-			})
-		);
+		)
+		.then(res=>{
+			console.log(res.data)
+		})
 	}
 	function handle(e){
 		const newTitle={...data}
