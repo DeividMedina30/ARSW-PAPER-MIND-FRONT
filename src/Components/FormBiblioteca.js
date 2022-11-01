@@ -7,9 +7,9 @@ import Navbar from "./Navbar";
 function postForm(){
 	const baseURL = "https://paparmindarsw.herokuapp.com/api/bibliotecas";
 	const [data, setData] = useState({
-		titulo: "",
-		fechaCreacion: "",
-		fechaModificacion: "",
+		nombre: "",
+		fecha_creacion: "",
+		fecha_modificacion: "",
 		descripcion: ""
 	})
 	function submit(e){
@@ -17,9 +17,9 @@ function postForm(){
 		axios.post(
 			baseURL,
 			{
-				titulo: data.titulo,
-				fechaCreacion: data.fechaCreacion,
-				fechaModificacion: data.fechaModificacion,
+				nombre: data.titulo,
+				fecha_creacion: data.fechaCreacion,
+				fecha_modificacion: data.fechaModificacion,
 				descripcion: data.descripcion
 			}
 		)
@@ -41,17 +41,17 @@ function postForm(){
 				<form class="was-validated" onSubmit={(e) => submit(e)}>
 					<div class="form-group">
 						<label for="title-biblioteca">Título Biblioteca</label>
-						<input onChange={(e)=>handle(e)} value={data.titulo} name="titulo" type="text" class="form-control" id="titulo" placeholder="Ingrese un título" required/>
+						<input onChange={(e)=>handle(e)} value={data.nombre} name="nombre" type="text" class="form-control" id="nombre" placeholder="Ingrese un título" required/>
 						<div class="invalid-feedback">El título no puede ser vacío</div>
 					</div>
 					<div class="form-group">
 						<label for="title-biblioteca">Fecha creación</label>
-						<input onChange={(e)=>handle(e)} value={data.fechaCreacion} name="fechaCreacion" type="Date" class="form-control" id="fechaCreacion" placeholder="Ingrese un título" required/>
+						<input onChange={(e)=>handle(e)} value={data.fecha_creacion} name="fecha_creacion" type="Date" class="form-control" id="fecha_creacion" placeholder="Ingrese un título" required/>
 						<div class="invalid-feedback">El título no puede ser vacío</div>
 					</div>
 					<div class="form-group">
 						<label for="title-biblioteca">Fecha modificacion</label>
-						<input onChange={(e)=>handle(e)} value={data.fechaModificacion} name="fechaModificacion" type="Date" class="form-control" id="fechaModificacion" placeholder="Ingrese un título" required/>
+						<input onChange={(e)=>handle(e)} value={data.fecha_modificacion} name="fecha_modificacion" type="Date" class="form-control" id="fecha_modificacion" placeholder="Ingrese un título" required/>
 						<div class="invalid-feedback">El título no puede ser vacío</div>
 					</div>
 					<div class="mb-3">
