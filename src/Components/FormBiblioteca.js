@@ -58,7 +58,7 @@ function postForm(){
 						<label  for="validationTextarea">Descripción</label>
 						<textarea onChange={(e)=>handle(e)} value={data.descripcion} name="descripcion" class="form-control is-invalid" id="descripcion" placeholder="Describa la biblioteca" required></textarea>
 					</div>
-					<button type="submit" class="btn btn-outline-success btn-lg btn-block" >Crear</button>
+					<button class="btn btn-outline-success btn-lg btn-block" >Crear</button>
 					<button type="button" class="btn btn-outline-danger btn-lg btn-block" onClick="/">Cancelar</button>
 				</form>
 			</div>
