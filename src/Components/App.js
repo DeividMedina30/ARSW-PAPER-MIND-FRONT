@@ -17,7 +17,7 @@ const reorder = (list, startIndex, endIndex) => {
 const App = () => {
   //const [bibliotecas, setBibliotecas] = useState(initialBibl);
   const [biblioteca, setBiblioteca] = useState({})
-  const baseURL = "https://paparmindarsw.herokuapp.com//api/bibliotecas";
+  const baseURL = "https://paparmindarsw.herokuapp.com/api/bibliotecas";
   useEffect(() => {
     const fetchBiblioteca = async() => {
       axios.get(baseURL).then(res => setBiblioteca(res.data));

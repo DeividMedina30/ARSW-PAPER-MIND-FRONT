@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 
 const FormBiblioteca = () =>{
 
-	const baseURL = "https://paparmindarsw.herokuapp.com//api/bibliotecas";
+	const baseURL = "https://paparmindarsw.herokuapp.com/api/bibliotecas";
 	//const [biblioteca, setBiblioteca] = useState({})
 
 	const guardarDatos = (e) =>{
