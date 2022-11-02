@@ -44,7 +44,7 @@ const App = () => {
       <div class="page-content container note-has-grid">
         <NavbarSelec/>
         <div class="tab-content bg-transparent">
-        <Droppable droppableId="bibliotecas" direction='horizontal' >
+        <Droppable droppableId="bibliotecas">
           {(droppableProvided)=> (
             <div {...droppableProvided.droppableProps} ref={droppableProvided.innerRef} id="note-full-container" class="note-has-grid row">
             {biblioteca && biblioteca[0]?
