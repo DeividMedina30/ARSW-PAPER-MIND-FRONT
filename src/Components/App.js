@@ -5,6 +5,8 @@ import Navbar from "./Navbar";
 import NavbarSelec from "./NavbarSelec";
 import { DragDropContext, Droppable } from '@hello-pangea/dnd';
 import { BibliotecaService } from "../service/BibliotecaService";
+import SockJS from "sockjs-client";
+import { Stomp } from "@stomp/stompjs";
 
 const reorder = (list, startIndex, endIndex) => {
   const result = [...list];
@@ -14,11 +16,19 @@ const reorder = (list, startIndex, endIndex) => {
   return result;
 }
 
+
 const App = () => {
   //const [bibliotecas, setBibliotecas] = useState(initialBibl);
   const [biblioteca, setBiblioteca] = useState({})
   const baseURL = "https://paparmindarsw.herokuapp.com/api/bibliotecas";
+  
   useEffect(() => {
+    var sock = new SockJS("https://paparmindarsw.herokuapp.com/stompBiblioteca");
+	  var stompClient = Stomp.over(sock);
+	  stompClient.connect({}, () => {
+		stompClient.subscribe('/topic/recargarBiblioteca',() => fetchBiblioteca());
+		
+	})
     const fetchBiblioteca = async() => {
       axios.get(baseURL).then(res => setBiblioteca(res.data));
     }

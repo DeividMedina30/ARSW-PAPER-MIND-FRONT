@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import '../Styles/FormBiblioteca.css';
 import Navbar from "./Navbar";
+import SockJS from "sockjs-client";
+import { Stomp } from "@stomp/stompjs";
 
 
 function postForm(){
@@ -11,6 +13,11 @@ function postForm(){
 		fecha_creacion: "",
 		fecha_modificacion: "",
 		descripcion: ""
+	})
+	var sock = new SockJS("https://paparmindarsw.herokuapp.com/stompBiblioteca");
+	var stompClient = Stomp.over(sock);
+	stompClient.connect({}, () => {
+		
 	})
 	function submit(e){
 		e.preventDefault();
@@ -25,6 +32,8 @@ function postForm(){
 		)
 		.then(res=>{
 			console.log(res.data)
+			stompClient.send("/app/recargarBiblioteca",{},"")
+
 		})
 	}
 	function handle(e){
