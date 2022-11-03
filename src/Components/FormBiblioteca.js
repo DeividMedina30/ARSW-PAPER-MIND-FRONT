@@ -7,7 +7,7 @@ import { Stomp } from "@stomp/stompjs";
 
 
 function postForm(){
-	const baseURL = "/api/bibliotecas";
+	const baseURL = "https://paparmindarsw.herokuapp.com/api/bibliotecas";
 	const [data, setData] = useState({
 		nombre: "",
 		fecha_creacion: "",

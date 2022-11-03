@@ -20,7 +20,7 @@ const reorder = (list, startIndex, endIndex) => {
 const App = () => {
   //const [bibliotecas, setBibliotecas] = useState(initialBibl);
   const [biblioteca, setBiblioteca] = useState({})
-  const baseURL = "/api/bibliotecas";
+  const baseURL = "https://paparmindarsw.herokuapp.com/api/bibliotecas";
   
   useEffect(() => {
     var sock = new SockJS("/stompBiblioteca");
