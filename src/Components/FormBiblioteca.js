@@ -7,14 +7,14 @@ import { Stomp } from "@stomp/stompjs";
 
 
 function postForm(){
-	const baseURL = "https://paparmindarsw.herokuapp.com/api/bibliotecas";
+	const baseURL = "/api/bibliotecas";
 	const [data, setData] = useState({
 		nombre: "",
 		fecha_creacion: "",
 		fecha_modificacion: "",
 		descripcion: ""
 	})
-	var sock = new SockJS("https://paparmindarsw.herokuapp.com/stompBiblioteca");
+	var sock = new SockJS("/stompBiblioteca");
 	var stompClient = Stomp.over(sock);
 	stompClient.connect({}, () => {
 		
