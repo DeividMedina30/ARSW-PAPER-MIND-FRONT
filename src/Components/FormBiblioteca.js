@@ -50,22 +50,22 @@ function postForm(){
 				<form class="was-validated" onSubmit={(e) => submit(e)}>
 					<div class="form-group">
 						<label for="title-biblioteca">Título Biblioteca</label>
-						<input value={data.nombre} name="nombre" type="text" class="form-control" id="nombre" placeholder="Ingrese un título" required/>
+						<input onChange={(e)=>handle(e)} value={data.nombre} name="nombre" type="text" class="form-control" id="nombre" placeholder="Ingrese un título" required/>
 						<div class="invalid-feedback">El título no puede ser vacío</div>
 					</div>
 					<div class="form-group">
 						<label for="title-biblioteca">Fecha creación</label>
-						<input value={data.fecha_creacion} name="fecha_creacion" type="Date" class="form-control" id="fecha_creacion" placeholder="Ingrese un título" required/>
+						<input onChange={(e)=>handle(e)} value={data.fecha_creacion} name="fecha_creacion" type="Date" class="form-control" id="fecha_creacion" placeholder="Ingrese un título" required/>
 						<div class="invalid-feedback">El título no puede ser vacío</div>
 					</div>
 					<div class="form-group">
 						<label for="title-biblioteca">Fecha modificacion</label>
-						<input value={data.fecha_modificacion} name="fecha_modificacion" type="Date" class="form-control" id="fecha_modificacion" placeholder="Ingrese un título" required/>
+						<input onChange={(e)=>handle(e)} value={data.fecha_modificacion} name="fecha_modificacion" type="Date" class="form-control" id="fecha_modificacion" placeholder="Ingrese un título" required/>
 						<div class="invalid-feedback">El título no puede ser vacío</div>
 					</div>
 					<div class="mb-3">
 						<label  for="validationTextarea">Descripción</label>
-						<textarea value={data.descripcion} name="descripcion" class="form-control is-invalid" id="descripcion" placeholder="Describa la biblioteca" required></textarea>
+						<textarea onChange={(e)=>handle(e)} value={data.descripcion} name="descripcion" class="form-control is-invalid" id="descripcion" placeholder="Describa la biblioteca" required></textarea>
 					</div>
 					<button class="btn btn-outline-success btn-lg btn-block" >Crear</button>
 					<button type="button" class="btn btn-outline-danger btn-lg btn-block" onClick="/">Cancelar</button>
@@ -77,7 +77,6 @@ function postForm(){
 
 export default postForm;
 
-//<textarea onChange={(e)=>handle(e)} value={data.descripcion} name="descripcion" class="form-control is-invalid" id="descripcion" placeholder="Describa la biblioteca" required></textarea>
 
 
 
