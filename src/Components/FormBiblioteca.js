@@ -14,7 +14,7 @@ function postForm(){
 		fecha_modificacion: "",
 		descripcion: ""
 	})
-	var sock = new SockJS("/stompBiblioteca");
+	var sock = new SockJS("https://paparmindarsw.herokuapp.com/stompBiblioteca");
 	var stompClient = Stomp.over(sock);
 	stompClient.connect({}, () => {
 		
@@ -31,7 +31,7 @@ function postForm(){
 			}
 		)
 		.then(res=>{
-			console.log(res.data)
+			console.log("Se obtuvo esta respeusta:" + res.data)
 			stompClient.send("/app/recargarBiblioteca",{},"")
 
 		})
