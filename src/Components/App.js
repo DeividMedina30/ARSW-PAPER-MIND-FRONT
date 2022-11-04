@@ -25,7 +25,7 @@ const App = () => {
   useEffect(() => {
     var sock = new SockJS("https://paparmindarsw.herokuapp.com/stompBiblioteca");
 	  var stompClient = Stomp.over(sock);
-	  stompClient.connect({}, () => {
+	  stompClient.connect({}, () => { 
 		stompClient.subscribe('/topic/recargarBiblioteca',() => fetchBiblioteca());
 		
 	})
