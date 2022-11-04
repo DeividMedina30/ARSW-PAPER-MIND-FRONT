@@ -16,13 +16,9 @@ function postForm(){
 	})
 	var sock = new SockJS("https://paparmindarsw.herokuapp.com/stompBiblioteca");
 	var stompClient = Stomp.over(sock);
-	stompClient.configure({
-		reconnectDelay: 5000
-	});
-	stompClient.activate();
 	stompClient.connect({}, () => {
-		resolve(stompClient);
-	});
+		
+	})
 	function submit(e){
 		e.preventDefault();
 		axios.post(
@@ -37,7 +33,7 @@ function postForm(){
 		.then(res=>{
 			console.log("Se obtuvo esta respeusta:" + res.data)
 			stompClient.send("/app/recargarBiblioteca",{},"")
-
+			
 		})
 	}
 	function handle(e){
