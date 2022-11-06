@@ -20,7 +20,7 @@ function Biblioteca(props){
             <span class="mr-1"><i class="fa fa-trash remove-note"></i></span>
             <div class="ml-auto">
               <div class="category-selector btn-group">
-                <a class="nav-link dropdown-toggle category-dropdown label-group p-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">
+                <a class="nav-link dropdown-toggle category-dropdown label-group p-0" data-toggle="dropdown" href="!#" role="button" aria-haspopup="true" aria-expanded="true">
                   <div class="category">
                     <div class="category-business"></div>
                     <div class="category-social"></div>
@@ -32,10 +32,10 @@ function Biblioteca(props){
                   <Link class="note-business badge-group-item badge-business dropdown-item position-relative category-business text-success" to="/Notas">
                     <i class="mdi mdi-checkbox-blank-circle-outline mr-1"></i>Abrir
                   </Link>
-                  <a class="note-social badge-group-item badge-social dropdown-item position-relative category-social text-info" href="javascript:void(0);">
+                  <a class="note-social badge-group-item badge-social dropdown-item position-relative category-social text-info" href="!#">
                     <i class="mdi mdi-checkbox-blank-circle-outline mr-1"></i> Editar
                   </a>
-                  <a class="note-important badge-group-item badge-important dropdown-item position-relative category-important text-danger" href="javascript:void(0);">
+                  <a class="note-important badge-group-item badge-important dropdown-item position-relative category-important text-danger" href="!#">
                     <i class="mdi mdi-checkbox-blank-circle-outline mr-1"></i> Eliminar
                   </a>
                 </div>

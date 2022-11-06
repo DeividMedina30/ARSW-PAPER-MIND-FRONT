@@ -10,8 +10,6 @@ function postForm(){
 	const baseURL = "https://paparmindarsw.herokuapp.com/api/bibliotecas";
 	const [data, setData] = useState({
 		nombre: "",
-		fecha_creacion: "",
-		fecha_modificacion: "",
 		descripcion: ""
 	})
 	var sock = new SockJS("https://paparmindarsw.herokuapp.com/stompBiblioteca");
@@ -21,12 +19,13 @@ function postForm(){
 	})
 	function submit(e){
 		e.preventDefault();
+		let date = new Date()
 		axios.post(
 			baseURL,
 			{
 				nombre: data.nombre,
-				fecha_creacion: data.fecha_creacion,
-				fecha_modificacion: data.fecha_modificacion,
+				fecha_creacion: date,
+				fecha_modificacion: date,
 				descripcion: data.descripcion
 			}
 		)
@@ -51,16 +50,6 @@ function postForm(){
 					<div class="form-group">
 						<label for="title-biblioteca">Título Biblioteca</label>
 						<input onChange={(e)=>handle(e)} value={data.nombre} name="nombre" type="text" class="form-control" id="nombre" placeholder="Ingrese un título" required/>
-						<div class="invalid-feedback">El título no puede ser vacío</div>
-					</div>
-					<div class="form-group">
-						<label for="title-biblioteca">Fecha creación</label>
-						<input onChange={(e)=>handle(e)} value={data.fecha_creacion} name="fecha_creacion" type="Date" class="form-control" id="fecha_creacion" placeholder="Ingrese un título" required/>
-						<div class="invalid-feedback">El título no puede ser vacío</div>
-					</div>
-					<div class="form-group">
-						<label for="title-biblioteca">Fecha modificacion</label>
-						<input onChange={(e)=>handle(e)} value={data.fecha_modificacion} name="fecha_modificacion" type="Date" class="form-control" id="fecha_modificacion" placeholder="Ingrese un título" required/>
 						<div class="invalid-feedback">El título no puede ser vacío</div>
 					</div>
 					<div class="mb-3">

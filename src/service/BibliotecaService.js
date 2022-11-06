@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseURL = "https://paparmindarsw.herokuapp.com/api/bibliotecas";
+const baseURL = "http://localhost:8080/api/bibliotecas";
 export class BibliotecaService{
     getAll(){
         return axios.get(this.baseURL).then(res => res.data);

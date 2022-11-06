@@ -4,7 +4,6 @@ import Biblioteca from "./Biblioteca";
 import Navbar from "./Navbar";
 import NavbarSelec from "./NavbarSelec";
 import { DragDropContext, Droppable } from '@hello-pangea/dnd';
-import { BibliotecaService } from "../service/BibliotecaService";
 import SockJS from "sockjs-client";
 import { Stomp } from "@stomp/stompjs";
 
