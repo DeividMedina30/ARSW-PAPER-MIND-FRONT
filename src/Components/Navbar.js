@@ -41,10 +41,10 @@ function Navbar(){
                 Contactos
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="!#">Ingeniero y desarrollador Cristian papito Ruiz</a>
-                <a class="dropdown-item" href="!#">Ingeniero y desarrollador Sebastian Medina</a>
+                <a class="dropdown-item" href="https://www.linkedin.com/in/cristian-ruiz-santa-803215206/">Ingeniero y desarrollador Cristian papito Ruiz</a>
+                <a class="dropdown-item" href="https://www.linkedin.com/in/deivid-medina/">Ingeniero y desarrollador Sebastian Medina</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="!#">Ingeniero y desarrollador Juan Molina</a>
+                <a class="dropdown-item" href="https://www.linkedin.com/in/juan-sebastian-garcia-hincapie-9a737921a/">Ingeniero y desarrollador Juan Molina</a>
               </div>
             </li>  
         </ul>
