@@ -29,7 +29,7 @@ const App = () => {
 		
 	})
     const fetchBiblioteca = async() => {
-      axios.get(baseURL).then(res => setBiblioteca(res.data)); 
+      axios.get(baseURL).then(res => setBiblioteca(res.data));
     }
     fetchBiblioteca();
   },[])

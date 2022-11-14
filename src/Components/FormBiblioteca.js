@@ -10,6 +10,8 @@ function postForm(){
 	const baseURL = "https://paparmindarsw.herokuapp.com/api/bibliotecas";
 	const [data, setData] = useState({
 		nombre: "",
+		fecha_creacion: "",
+		fecha_modificacion: "",
 		descripcion: ""
 	})
 	var sock = new SockJS("https://paparmindarsw.herokuapp.com/stompBiblioteca");
@@ -30,9 +32,9 @@ function postForm(){
 			}
 		)
 		.then(res=>{
-			console.log("Se obtuvo esta respeusta:" + res.data)
+			console.log(res.data)
 			stompClient.send("/app/recargarBiblioteca",{},"")
-			
+
 		})
 	}
 	function handle(e){
@@ -63,6 +65,7 @@ function postForm(){
 		</div>
 	);
 }
+
 export default postForm;
 
 

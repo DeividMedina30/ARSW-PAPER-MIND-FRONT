@@ -10,13 +10,6 @@ import FormEditBiblioteca from './Components/FormEditBiblioteca';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const cors = require('cors');
-const corsOptions ={
-    origin:'https://paparmindarsw.herokuapp.com', 
-    credentials:true,            //access-control-allow-credentials:true
-    optionSuccessStatus:200
-}
-app.use(cors(corsOptions));
 root.render(
   <React.StrictMode>
     <Router>
