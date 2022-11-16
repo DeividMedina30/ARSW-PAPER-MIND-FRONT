@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Biblioteca from "./Biblioteca";
+import BibliotecaImp from "./BibliotecaImp";
 import Navbar from "./Navbar";
 import NavbarSelec from "./NavbarSelec";
 import { DragDropContext, Droppable } from '@hello-pangea/dnd';
@@ -58,7 +59,7 @@ const App = () => {
             <div {...droppableProvided.droppableProps} ref={droppableProvided.innerRef} id="note-full-container" class="note-has-grid row">
             {biblioteca && biblioteca[0]?
               biblioteca.map((biblioteca, index) => ( 
-              <Biblioteca 
+              <Biblioteca
               index = {index}
               Bibid = {index.toString()}
               titulo = {biblioteca.nombre}

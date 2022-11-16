@@ -9,7 +9,7 @@ function NavbarSelec(){
         </a>
       </li>
       <li class="nav-item">
-        <a href="!#" class="nav-link rounded-pill note-link d-flex align-items-center px-2 px-md-3 mr-0 mr-md-2" id="note-business"> <i class="icon-briefcase mr-1"></i><span class="d-none d-md-block">Eliminar biblioteca</span></a>
+        <a href="/addNewBiblioteca" class="nav-link rounded-pill note-link d-flex align-items-center px-2 px-md-3 mr-0 mr-md-2" id="note-business"> <i class="icon-briefcase mr-1"></i><span class="d-none d-md-block">Agregar Biblioteca</span></a>
       </li>
       <li class="nav-item">
         <a href="!#" class="nav-link rounded-pill note-link d-flex align-items-center px-2 px-md-3 mr-0 mr-md-2" id="note-social"> <i class="icon-share-alt mr-1"></i><span class="d-none d-md-block">Agregar contribuidor</span></a>

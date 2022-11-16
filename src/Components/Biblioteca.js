@@ -32,10 +32,10 @@ function Biblioteca(props){
                   <Link class="note-business badge-group-item badge-business dropdown-item position-relative category-business text-success" to="/Notas">
                     <i class="mdi mdi-checkbox-blank-circle-outline mr-1"></i>Abrir
                   </Link>
-                  <a class="note-social badge-group-item badge-social dropdown-item position-relative category-social text-info" href="!#">
+                  <a class="note-social badge-group-item badge-social dropdown-item position-relative category-social text-info" href="/editBiblioteca">
                     <i class="mdi mdi-checkbox-blank-circle-outline mr-1"></i> Editar
                   </a>
-                  <a class="note-important badge-group-item badge-important dropdown-item position-relative category-important text-danger" href="!#">
+                  <a class="note-important badge-group-item badge-important dropdown-item position-relative category-important text-danger" href="/elimBiblioteca">
                     <i class="mdi mdi-checkbox-blank-circle-outline mr-1"></i> Eliminar
                   </a>
                 </div>

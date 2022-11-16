@@ -8,6 +8,7 @@ import FormBiblioteca from './Components/FormBiblioteca.js';
 import FormNota from './Components/FormNota';
 import FormEditBiblioteca from './Components/FormEditBiblioteca';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ElimBiblioteca from './Components/ElimBiblioteca.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -25,6 +26,8 @@ root.render(
         <Route path='/editBiblioteca' element={<FormEditBiblioteca />}>
         </Route>
         <Route path='/addNewNota' element={<FormNota />}>
+        </Route>
+        <Route path='/elimBiblioteca' element={<ElimBiblioteca />}>
         </Route>
       </Routes>
     </Router>

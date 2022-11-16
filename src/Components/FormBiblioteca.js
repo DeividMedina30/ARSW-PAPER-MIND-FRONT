@@ -4,12 +4,14 @@ import '../Styles/FormBiblioteca.css';
 import Navbar from "./Navbar";
 import SockJS from "sockjs-client";
 import { Stomp } from "@stomp/stompjs";
-
+import Swal from 'sweetalert2';
 
 function postForm(){
 	const baseURL = "https://paparmindarsw.herokuapp.com/api/bibliotecas";
 	const [data, setData] = useState({
 		nombre: "",
+		fecha_creacion: "",
+		fecha_modificacion: "",
 		descripcion: ""
 	})
 	var sock = new SockJS("https://paparmindarsw.herokuapp.com/stompBiblioteca");
@@ -23,17 +25,41 @@ function postForm(){
 		axios.post(
 			baseURL,
 			{
-				nombre: data.nombre,
+				nombre: document.getElementById("nombre").value,
 				fecha_creacion: date,
 				fecha_modificacion: date,
-				descripcion: data.descripcion
+				descripcion: document.getElementById("descripcion").value
 			}
 		)
 		.then(res=>{
-			console.log("Se obtuvo esta respeusta:" + res.data)
+			console.log("Status Obtenido:" + res.status)
 			stompClient.send("/app/recargarBiblioteca",{},"")
-			
+			limpiarCampo();
 		})
+		.catch(error =>{
+			if (error.response) {
+				console.log(error.response);
+				console.log("server responded");
+				Swal.fire(
+					'No se pudo crear la biblioteca!',
+					'Clic en el boton para continuar!',
+					'error'
+				)
+			  } else if (error.request) {
+				console.log("network error");
+			  } else {
+				console.log(error);
+			  }
+		})
+	}
+	function limpiarCampo(){
+		document.getElementById("nombre").value = "";
+		document.getElementById("descripcion").value = "";
+		Swal.fire(
+			'Se creo la Biblioteca!',
+			'Clic en el boton para continuar!',
+			'success'
+		)
 	}
 	function handle(e){
 		const newTitle={...data}
@@ -49,12 +75,12 @@ function postForm(){
 				<form class="was-validated" onSubmit={(e) => submit(e)}>
 					<div class="form-group">
 						<label for="title-biblioteca">Título Biblioteca</label>
-						<input onChange={(e)=>handle(e)} value={data.nombre} name="nombre" type="text" class="form-control" id="nombre" placeholder="Ingrese un título" required/>
+						<input name="nombre" type="text" class="form-control" id="nombre" placeholder="Ingrese un título" required/>
 						<div class="invalid-feedback">El título no puede ser vacío</div>
 					</div>
 					<div class="mb-3">
 						<label  for="validationTextarea">Descripción</label>
-						<textarea onChange={(e)=>handle(e)} value={data.descripcion} name="descripcion" class="form-control is-invalid" id="descripcion" placeholder="Describa la biblioteca" required></textarea>
+						<textarea name="descripcion" class="form-control is-invalid" id="descripcion" placeholder="Describa la biblioteca" required></textarea>
 					</div>
 					<button class="btn btn-outline-success btn-lg btn-block" >Crear</button>
 					<button type="button" class="btn btn-outline-danger btn-lg btn-block" onClick="/">Cancelar</button>
@@ -63,6 +89,7 @@ function postForm(){
 		</div>
 	);
 }
+
 export default postForm;
 
 
