@@ -7,6 +7,7 @@ import NavbarSelec from "./NavbarSelec";
 import { DragDropContext, Droppable } from '@hello-pangea/dnd';
 import SockJS from "sockjs-client";
 import { Stomp } from "@stomp/stompjs";
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 const reorder = (list, startIndex, endIndex) => {
   const result = [...list];
@@ -30,7 +31,7 @@ const App = () => {
 		
 	})
     const fetchBiblioteca = async() => {
-      axios.get(baseURL).then(res => setBiblioteca(res.data)); 
+      axios.get(baseURL).then(res => setBiblioteca(res.data));
     }
     fetchBiblioteca();
   },[])
