@@ -15,36 +15,36 @@ function NavbarN(){
               <Link class="nav-link" to="/Notas">Home <span class="sr-only">(current)</span></Link>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="!#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Notas
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <Link class="dropdown-item" to="/addNewNota">Agregar Nota</Link>
-                <a class="dropdown-item" href="!#">Editar Nota</a>
-                <a class="dropdown-item" href="!#">Ver Notas compartidas</a>
+                <a class="dropdown-item" href="#">Editar Nota</a>
+                <a class="dropdown-item" href="#">Ver Notas compartidas</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="!#">Eliminar Nota</a>
+                <a class="dropdown-item" href="#">Eliminar Nota</a>
               </div>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="!#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Contribuidores
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="!#">Agregar contribuidor a Nota</a>
+                <a class="dropdown-item" href="#">Agregar contribuidor a Nota</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="!#">Eliminar contribuidor de Nota</a>
+                <a class="dropdown-item" href="#">Eliminar contribuidor de Nota</a>
               </div>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="!#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Contactos
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="https://www.youtube.com/c/freeCodeCampEspa%C3%B1ol">Ingeniero y desarrollador Cristian papito Ruiz</a>
-                <a class="dropdown-item" href="!#">Ingeniero y desarrollador Sebastian Medina</a>
+                <a class="dropdown-item" href="#">Ingeniero y desarrollador Sebastian Medina</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="!#">Ingeniero y desarrollador Juan Molina</a>
+                <a class="dropdown-item" href="#">Ingeniero y desarrollador Juan Molina</a>
               </div>
             </li>
           </ul>

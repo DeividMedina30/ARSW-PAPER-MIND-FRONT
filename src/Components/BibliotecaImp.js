@@ -20,7 +20,7 @@ function BibliotecaImp(props){
             <span class="mr-1"><i class="fa fa-trash remove-note"></i></span>
             <div class="ml-auto">
               <div class="category-selector btn-group">
-                <a class="nav-link dropdown-toggle category-dropdown label-group p-0" data-toggle="dropdown" href="!#" role="button" aria-haspopup="true" aria-expanded="true">
+                <a class="nav-link dropdown-toggle category-dropdown label-group p-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">
                   <div class="category">
                     <div class="category-business"></div>
                     <div class="category-social"></div>

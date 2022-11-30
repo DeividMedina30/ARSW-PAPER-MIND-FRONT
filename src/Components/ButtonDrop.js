@@ -8,9 +8,9 @@ function ButtonDrop(){
       <a class="btn btn-success dropdown-toggle" data-toggle="dropdown" href="#"></a>
       <ul class="dropdown-menu">
         <li><a class="dropdown-item" href="/editBiblioteca"><i class="fa fa-pencil fa-fw"></i>  Editar</a></li>
-        <li><a class="dropdown-item" href="!#"><i class="fa fa-trash-o fa-fw"></i>  Eliminar</a></li>
+        <li><a class="dropdown-item" href="#"><i class="fa fa-trash-o fa-fw"></i>  Eliminar</a></li>
         <li class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="!#"><i class="fa fa-unlock"></i>  Añadir contribuidor</a></li>
+        <li><a class="dropdown-item" href="#"><i class="fa fa-unlock"></i>  Añadir contribuidor</a></li>
       </ul>
   </div>
   );

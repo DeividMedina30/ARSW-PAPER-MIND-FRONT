@@ -1,18 +1,16 @@
 import React from "react";
 import './Styles/indexLogin.css';
 import {post} from './Components/apiclient.js';
-import  { Navigate , useNavigate  } from 'react-router-dom';
-import {getAuth , signInWithCredential, signInWithEmailAndPassword } from "firebase/auth"
+import  { useNavigate  } from 'react-router-dom';
+import {getAuth , createUserWithEmailAndPassword } from "firebase/auth"
 
-const Login = () => {
+const Register = () => {
   const [value, setValue] = React.useState(false);
-  const [redirect, setRedirect] = React.useState(false);
   const navigate = useNavigate ();
-
   const auth = getAuth();
 
-  const login = async (user, pass) => {
-    await signInWithEmailAndPassword(auth, user, pass).then((userCredential) => {
+  const registerFireBase = async (user, pass) => {
+    await createUserWithEmailAndPassword(auth, user, pass).then((userCredential) => {
       const user = userCredential.user;
       console.log(user)
     }).catch((error) => {
@@ -28,17 +26,23 @@ const Login = () => {
     if (event.target[0] !== undefined && event.target[1] !== undefined) {
       let username = event.target[0].value;
       let password = event.target[1].value;
+      let nombre = event.target[2].value;
+      let telefono = event.target[3].value;
+      let fecha = event.target[4].value;
       let user = {
         "correo": username,
-        "password1": password
+        "password1": password,
+        "telefono": telefono,
+        "name": nombre,
+        "fecha": fecha
       }
 
+      registerFireBase(username, password)
+
       console.log(user)
-      login(username, password)
      
-      post("/usuario/User", user).then((m)=>{
+      post("/usuario/addUser", user).then((m)=>{
         console.log(m)
-        setRedirect(true)
       }).catch(err =>{
         console.log(err)
       })
@@ -53,7 +57,7 @@ const Login = () => {
     <div>
       <div class="contenedorInterno">
         <h1>¡Bienvenido a Paper Mind! ☺</h1><br></br>
-        <h3>Ingrese sus credenciales de acceso:</h3><br></br>
+        <h3>Ingrese sus credenciales para registro:</h3><br></br>
         <form onSubmit={handleSubmit}>
           <div class="form-group">
             <label for="exampleInputEmail1">Usuario</label>
@@ -63,17 +67,28 @@ const Login = () => {
             <label for="exampleInputPassword1">Contraseña</label>
             <input type="password" class="form-control" id="password" placeholder="Contraseña" />
           </div>
-          <button type="submit" class="btn btn-primary" onclick={handleSubmit}>Acceder</button>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Nombre</label>
+            <input type="text" class="form-control" id="nombre" placeholder="nombre" />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Telefono</label>
+            <input type="text" class="form-control" id="Telefono" placeholder="Telefono" />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Fecha</label>
+            <input type="date" class="form-control" id="Fecha" placeholder="Fecha" />
+          </div>
+          <button type="submit" class="btn btn-primary" onclick={handleSubmit}>Registrar</button>
         </form>
         <p></p>
-        <button class="btn btn-primary" onClick={() => navigate('/register')}>
-          Registrarse
+        <button class="btn btn-primary" onClick={() => navigate('/')}>
+          Iniciar sesión
         </button>
-        {redirect && <Navigate to="/App" />}
       </div>
     </div>
   );
   
 }
 
-export default Login;
+export default Register;
