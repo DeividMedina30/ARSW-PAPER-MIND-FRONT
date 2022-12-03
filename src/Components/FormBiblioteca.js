@@ -7,14 +7,14 @@ import { Stomp } from "@stomp/stompjs";
 
 
 function postForm(){
-	const baseURL = "http://localhost:8080/api/bibliotecas";
+	const baseURL = "https://papermindback.azurewebsites.net/";
 	const [data, setData] = useState({
 		nombre: "",
 		fecha_creacion: "",
 		fecha_modificacion: "",
 		descripcion: ""
 	})
-	var sock = new SockJS("http://localhost:8080/stompBiblioteca");
+	var sock = new SockJS("baseURL/stompBiblioteca");
 	var stompClient = Stomp.over(sock);
 	stompClient.connect({}, () => {
 		

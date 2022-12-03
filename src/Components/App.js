@@ -20,10 +20,10 @@ const reorder = (list, startIndex, endIndex) => {
 const App = () => {
   //const [bibliotecas, setBibliotecas] = useState(initialBibl);
   const [biblioteca, setBiblioteca] = useState({})
-  const baseURL = "http://localhost:8080/api/bibliotecas";
+  const baseURL = "https://papermindback.azurewebsites.net/";
   
   useEffect(() => {
-    var sock = new SockJS("http://localhost:8080/stompBiblioteca");
+    var sock = new SockJS("baseURL/stompBiblioteca");
 	  var stompClient = Stomp.over(sock);
 	  stompClient.connect({}, () => {
 		stompClient.subscribe('/topic/recargarBiblioteca',() => fetchBiblioteca());
