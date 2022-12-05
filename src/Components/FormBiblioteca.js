@@ -7,7 +7,7 @@ import { Stomp } from "@stomp/stompjs";
 
 
 function postForm(){
-	const baseURL = "https://papermindback.azurewebsites.net/";
+	const baseURL = "https://papermindback.azurewebsites.net/api/bibliotecas";
 	const [data, setData] = useState({
 		nombre: "",
 		fecha_creacion: "",

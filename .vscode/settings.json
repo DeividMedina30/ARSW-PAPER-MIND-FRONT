@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/1081473a-bad9-4602-aa58-7b63d9d2f2c0/AppServices/subscriptions/1081473a-bad9-4602-aa58-7b63d9d2f2c0/resourceGroups/FRONT-PROYECTO-ARSW_group/providers/Microsoft.Web/sites/FRONT-PROYECTO-ARSW",
+    "appService.deploySubpath": "."
+}

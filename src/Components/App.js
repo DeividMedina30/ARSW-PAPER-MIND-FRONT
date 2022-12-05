@@ -20,7 +20,7 @@ const reorder = (list, startIndex, endIndex) => {
 const App = () => {
   //const [bibliotecas, setBibliotecas] = useState(initialBibl);
   const [biblioteca, setBiblioteca] = useState({})
-  const baseURL = "https://papermindback.azurewebsites.net/";
+  const baseURL = "https://papermindback.azurewebsites.net/api/bibliotecas";
   
   useEffect(() => {
     var sock = new SockJS("baseURL/stompBiblioteca");

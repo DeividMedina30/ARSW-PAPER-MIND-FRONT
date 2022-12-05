@@ -15,6 +15,7 @@ const Login = () => {
     await signInWithEmailAndPassword(auth, user, pass).then((userCredential) => {
       const user = userCredential.user;
       console.log(user)
+      navigate("/app")
     }).catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -35,13 +36,6 @@ const Login = () => {
 
       console.log(user)
       login(username, password)
-     
-      post("/usuario/User", user).then((m)=>{
-        console.log(m)
-        setRedirect(true)
-      }).catch(err =>{
-        console.log(err)
-      })
 
       console.log(value);
       setValue(true);
