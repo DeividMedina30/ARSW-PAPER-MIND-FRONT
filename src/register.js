@@ -78,11 +78,11 @@ const Register = () => {
           <div class="form-group">
             <label for="exampleInputEmail1">Fecha</label>
             <input type="date" class="form-control" id="Fecha" placeholder="Fecha" />
-          </div>
-          <button type="submit" class="btn btn-primary" onclick={handleSubmit}>Registrar</button>
+          </div><br></br>
+          <button type="submit" class="btn btn-outline-primary btn-lg btn-block" onclick={handleSubmit}>Registrar</button>
         </form>
         <p></p>
-        <button class="btn btn-primary" onClick={() => navigate('/')}>
+        <button class="btn btn-outline-secondary btn-lg btn-block" onClick={() => navigate('/')}>
           Iniciar sesión
         </button>
       </div>

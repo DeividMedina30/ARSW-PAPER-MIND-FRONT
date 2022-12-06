@@ -21,10 +21,11 @@
     "serve": "^14.0.1",
     "socket.io-client": "^4.5.3",
     "sockjs-client": "^1.6.1",
+    "sweetalert2": "^11.6.15",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start ",
+    "start": "react-scripts start ",
     "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

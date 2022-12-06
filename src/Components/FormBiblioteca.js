@@ -4,7 +4,7 @@ import '../Styles/FormBiblioteca.css';
 import Navbar from "./Navbar";
 import SockJS from "sockjs-client";
 import { Stomp } from "@stomp/stompjs";
-
+import Swal from 'sweetalert2';
 
 function postForm(){
 	const baseURL = "https://papermindback.azurewebsites.net/api/bibliotecas";
@@ -14,27 +14,54 @@ function postForm(){
 		fecha_modificacion: "",
 		descripcion: ""
 	})
-	var sock = new SockJS("baseURL/stompBiblioteca");
+	var sock = new SockJS("https://papermindback.azurewebsites.net/api/bibliotecas");
 	var stompClient = Stomp.over(sock);
 	stompClient.connect({}, () => {
 		
 	})
 	function submit(e){
 		e.preventDefault();
+		let date = new Date()
 		axios.post(
 			baseURL,
 			{
-				nombre: data.nombre,
-				fecha_creacion: data.fecha_creacion,
-				fecha_modificacion: data.fecha_modificacion,
-				descripcion: data.descripcion
+				nombre: document.getElementById("nombre").value,
+				fecha_dateCreated: date,
+				fecha_modification: date,
+				description: document.getElementById("descripcion").value
 			}
 		)
 		.then(res=>{
-			console.log(res.data)
+			console.log("Status Obtenido:" + res.status)
+      limpiarCampo();
 			stompClient.send("/app/recargarBiblioteca",{},"")
-
+			console.log("Llegó a antes de limpiar el campo")
 		})
+		.catch(error =>{
+			if (error.response) {
+				console.log(error.response);
+				console.log("server responded");
+				Swal.fire(
+					'No se pudo crear la biblioteca!',
+					'Clic en el boton para continuar!',
+					'error'
+				)
+			  } else if (error.request) {
+				console.log("network error");
+			  } else {
+				console.log(error);
+			  }
+		})
+	}
+	function limpiarCampo(){
+		console.log("Llegó a despues de limpiar el campo")
+		document.getElementById("nombre").value = "";
+		document.getElementById("descripcion").value = "";
+		Swal.fire(
+			'Se creo la Biblioteca!',
+			'Clic en el boton para continuar!',
+			'success'
+		)
 	}
 	function handle(e){
 		const newTitle={...data}
@@ -50,22 +77,12 @@ function postForm(){
 				<form class="was-validated" onSubmit={(e) => submit(e)}>
 					<div class="form-group">
 						<label for="title-biblioteca">Título Biblioteca</label>
-						<input onChange={(e)=>handle(e)} value={data.nombre} name="nombre" type="text" class="form-control" id="nombre" placeholder="Ingrese un título" required/>
-						<div class="invalid-feedback">El título no puede ser vacío</div>
-					</div>
-					<div class="form-group">
-						<label for="title-biblioteca">Fecha creación</label>
-						<input onChange={(e)=>handle(e)} value={data.fecha_creacion} name="fecha_creacion" type="Date" class="form-control" id="fecha_creacion" placeholder="Ingrese un título" required/>
-						<div class="invalid-feedback">El título no puede ser vacío</div>
-					</div>
-					<div class="form-group">
-						<label for="title-biblioteca">Fecha modificacion</label>
-						<input onChange={(e)=>handle(e)} value={data.fecha_modificacion} name="fecha_modificacion" type="Date" class="form-control" id="fecha_modificacion" placeholder="Ingrese un título" required/>
+						<input name="nombre" type="text" class="form-control" id="nombre" placeholder="Ingrese un título" required/>
 						<div class="invalid-feedback">El título no puede ser vacío</div>
 					</div>
 					<div class="mb-3">
 						<label  for="validationTextarea">Descripción</label>
-						<textarea onChange={(e)=>handle(e)} value={data.descripcion} name="descripcion" class="form-control is-invalid" id="descripcion" placeholder="Describa la biblioteca" required></textarea>
+						<textarea name="descripcion" class="form-control is-invalid" id="descripcion" placeholder="Describa la biblioteca" required></textarea>
 					</div>
 					<button class="btn btn-outline-success btn-lg btn-block" >Crear</button>
 					<button type="button" class="btn btn-outline-danger btn-lg btn-block" onClick="/">Cancelar</button>

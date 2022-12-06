@@ -56,11 +56,11 @@ const Login = () => {
           <div class="form-group">
             <label for="exampleInputPassword1">Contraseña</label>
             <input type="password" class="form-control" id="password" placeholder="Contraseña" />
-          </div>
-          <button type="submit" class="btn btn-primary" onclick={handleSubmit}>Acceder</button>
+          </div><br></br>
+          <button type="submit" class="btn btn-outline-primary btn-lg btn-block" onclick={handleSubmit}>Acceder</button>
         </form>
         <p></p>
-        <button class="btn btn-primary" onClick={() => navigate('/register')}>
+        <button class="btn btn-outline-secondary btn-lg btn-block" onClick={() => navigate('/register')}>
           Registrarse
         </button>
         {redirect && <Navigate to="/App" />}
