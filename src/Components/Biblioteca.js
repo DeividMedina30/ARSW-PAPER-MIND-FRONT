@@ -8,7 +8,7 @@ import axios from "axios";
 import SockJS from "sockjs-client";
 import { Stomp } from "@stomp/stompjs";
 
-var sock = new SockJS("https://papermindback.azurewebsites.net/api/bibliotecas");
+var sock = new SockJS("https://back-paper.azurewebsites.net/api/bibliotecas");
 var stompClient = Stomp.over(sock);
 stompClient.connect({}, () => {
   
@@ -17,7 +17,7 @@ function Biblioteca(props){
 
   function enviarDatos(){
     var titulo = document.getElementById(`${props.titulo}`).textContent;
-    const urlDelete = `https://papermindback.azurewebsites.net/api/bibliotecas/${titulo}`;
+    const urlDelete = `https://back-paper.azurewebsites.net/api/bibliotecas/${titulo}`;
     Swal.fire({
       title: 'Seguro que deseas borrar la Biblioteca?',
       showCancelButton: true,
@@ -53,7 +53,7 @@ function Biblioteca(props){
   function actualizarDatos(){
     var titulo = document.getElementById(`${props.titulo}`).textContent;
     var descripcion = document.getElementById(`${props.contenido}`).textContent;
-    const urlPut = `https://papermindback.azurewebsites.net/api/bibliotecas/${titulo}`;
+    const urlPut = `https://back-paper.azurewebsites.net/api/bibliotecas/${titulo}`;
 
     Swal.fire({
       title: '<h2>Elija la biblioteca que desea editar:</h2>',

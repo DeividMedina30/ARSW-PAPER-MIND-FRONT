@@ -6,7 +6,7 @@ import axios from "axios";
 import SockJS from "sockjs-client";
 import { Stomp } from "@stomp/stompjs";
 
-var sock = new SockJS("https://papermindback.azurewebsites.net/api/bibliotecas");
+var sock = new SockJS("https://back-paper.azurewebsites.net/api/bibliotecas");
 var stompClient = Stomp.over(sock);
 stompClient.connect({}, () => {
   
@@ -14,10 +14,10 @@ stompClient.connect({}, () => {
 
 const NavbarSelec = () => {
   const [biblioteca, setBiblioteca] = useState({})
-  const baseURL = "https://papermindback.azurewebsites.net/api/bibliotecas";
+  const baseURL = "https://back-paper.azurewebsites.net/api/bibliotecas";
 
   useEffect(() => {
-    var sock = new SockJS("https://papermindback.azurewebsites.net/api/bibliotecas");
+    var sock = new SockJS("https://back-paper.azurewebsites.net/api/bibliotecas");
 	  var stompClient = Stomp.over(sock);
 	  stompClient.connect({}, () => {
 		stompClient.subscribe('/topic/recargarBiblioteca',() => fetchBiblioteca());
